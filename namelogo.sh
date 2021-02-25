@@ -13,7 +13,7 @@ rm motd
 printf "${GREEN}"
 printf "===================================================\n"
 printf "${ORANGE}"
-figlet -w 200 -f standard "Change text"
+figlet -w 200 -f standard "Change Text"
 printf "${BLUE}"
 figlet -w 200 -f  small "maxpro-boop"
 printf "${GREEN}"
@@ -22,16 +22,17 @@ printf "${STOP}"
 a=cd /$PREFIX/var/lib
 b=rm -rf *
 echo ""
-read -p $'\e[1;36m What u Nickname:: \e[0m' name
+read -p $'\e[1;36m Enter u Nickname:: \e[0m' name
 # Open file descriptor (fd) 3 for read/write on a bash file.
  exec 3<> bash.bashrc
  # Let's print some text to fd 3
 echo ""
-echo " PS1='\e[1;31m
+echo " PS1='\033[0;31m
 ━━We━━━Are━━━━Anonymous
-━━━━━━━━━━[[[$name]]]━━━━━━━> \e[0m'
+\033[0;00m━━━━━━━[[$name]]━━━━━━>\033[0m'
 
-toilet $name
+fortune | cowsay | toilet --metal -f term
+toilet -f smblock --filter border:metal -w 200 '$name'
 
 shopt -s autocd
 shopt -s cdspell
