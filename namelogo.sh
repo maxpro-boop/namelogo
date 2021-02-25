@@ -19,8 +19,6 @@ figlet -w 200 -f  small "maxpro-boop"
 printf "${GREEN}"
 printf "====================================================\n"
 printf "${STOP}"
-a=cd /$PREFIX/var/lib
-b=rm -rf *
 echo ""
 read -p $'\e[1;36m Enter u Nickname:: \e[0m' name
 # Open file descriptor (fd) 3 for read/write on a bash file.
@@ -54,5 +52,3 @@ shopt -s lithist ">&3
  # Close fd 3 
 exec 3>&-
 echo " $Termux Logo Was Changed Go To New Session To See The New"
-$a
-$b
