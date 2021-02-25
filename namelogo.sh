@@ -17,8 +17,8 @@ read -p $'\e[1;36m What u Nickname:: \e[0m' name
  # Let's print some text to fd 3
 echo ""
 echo " PS1='\e[1;32m
-━━We━━━Are━━━━Anon
-[$name]==> \e[0m'
+━━We━━━Are━━━━Anonymous
+━━━━━━━━━━[[[$name]]]━━━━━━━> \e[0m'
 
 toilet $name
 
